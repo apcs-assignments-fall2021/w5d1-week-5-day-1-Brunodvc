@@ -6,7 +6,22 @@ public class MyMain {
     // to sort our code
     // This algorithm returns the sorted array
     public static int[] selectionSort(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
+        int min_value = 1000000;
+        int min_index = 0;
+
+            for (int i = 0; i < arr.length; i++) {
+                min_value = 1000000;
+                for (int x = i; x < arr.length; x++) {
+                    if (arr[x] < min_value) {
+                        min_value = arr[x];
+                        min_index = x;
+                    }
+                }
+                //swap min_index with the first value (which keeps getting changed)
+                int j = arr[i];
+                arr[i] = arr[min_index];
+                arr[min_index] = j;
+            }
         return arr;
     }
 
